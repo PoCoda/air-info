@@ -1,6 +1,13 @@
 {
-  "HOME": {
-    "TITLE": "Hello Angular with ngx-translate!",
-    "SELECT": "Change language"
+  "STATUS": {
+    "MATCHES": "Pollution matches norms",
+    "EXCEEDS": "Pollution exceeds norms",
+    "MATCHES_FOR": "Pollution exceeds norms for {{value}} days in a row",
+    "EXCEEDS_FOR": "Pollution matches norms for {value} days in a row",
+    "WORST_SINCE": "Today the air is worst since {{value}} days",
+    "BEST_SINCE": "Today the air is best since {{value}} days",
+    "WORST_DISTRICT": "Worst district today is {{value}}",
+    "BEST_DISTRICT": "Best district today is {{value}}",
+    "LAST_WEEK": "Last week the air was polluted in avg {{value}}"
   }
 }

@@ -9,6 +9,7 @@ import { MetricsComponent } from './metrics/metrics.component';
 import {TranslateLoader, TranslateModule} from '@ngx-translate/core';
 import {HttpClient, HttpClientModule} from '@angular/common/http';
 import {TranslateHttpLoader} from '@ngx-translate/http-loader';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 // AoT requires an exported function for factories
 export function HttpLoaderFactory(httpClient: HttpClient) {
@@ -24,6 +25,7 @@ export function HttpLoaderFactory(httpClient: HttpClient) {
     MetricsComponent
   ],
   imports: [
+    FontAwesomeModule,
     BrowserModule,
     HttpClientModule,
     TranslateModule.forRoot({
@@ -32,7 +34,8 @@ export function HttpLoaderFactory(httpClient: HttpClient) {
         useFactory: HttpLoaderFactory,
         deps: [HttpClient]
       }
-    })  ],
+    }),
+  ],
   providers: [],
   bootstrap: [AppComponent]
 })
