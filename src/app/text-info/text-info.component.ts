@@ -6,6 +6,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./text-info.component.scss']
 })
 export class TextInfosComponent implements OnInit {
+  // faCoffee = faCoffee;
+  today: string = new Date().getDate() + '/' + (new Date().getMonth() + 1) + '/' + (new Date().getFullYear() - 1);
 
   constructor() { }
 

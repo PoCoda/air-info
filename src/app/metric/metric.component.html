@@ -4,5 +4,10 @@
         <span class="text-secondary">%</span>
     </div>
     <div class="metric__secondary">{{secondLine}}</div>
-    <div class="metric__teritary">{{name}}</div>
+    <div class="metric__teritary">
+      <span>
+        {{name}}
+        <ng-content></ng-content>
+      </span>
+    </div>
 </div>

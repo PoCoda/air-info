@@ -1,4 +1,13 @@
 .metrics {
-    display: grid;
-    grid-template-columns: 20% 20%;
+    display: flex;
+}
+
+.equals {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  margin-right: 64px;
+  height: 3rem;
+
+  font-size: 2rem;
 }

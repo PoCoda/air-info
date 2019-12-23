@@ -1,10 +1,47 @@
-<ul>
-  <li>{{'STATUS.MATCHES' | translate}}</li>
-  <li>{{'STATUS.MATCHES_FOR' | translate: {value: 5} }}</li>
+<div class="text-info">
+  <div class="text-info__element positive">
+    <i class="fas fa-check"></i>
+    <div class="text-info__header">Status</div>
+    <div class="text-info__content positive">{{'STATUS.MATCHES' | translate}}</div>
+  </div>
 
-  <li>{{'STATUS.WORST_SINCE' | translate: {value: 5} }}</li>
+  <div class="text-info__element">
+    <i class="fas fa-paper-plane"></i>
+    <div class="text-info__header">Streak</div>
+    <div class="text-info__content">
+      {{'STATUS.MATCHES_FOR' | translate: {value: 5} }}
+    </div>
+  </div>
 
-  <li>{{'STATUS.WORST_DISTRICT' | translate: {value: 'Nowa Huta'} }}</li>
+  <div class="text-info__element">
+    <i class="fas fa-history"></i>
+    <div class="text-info__header">Worst since</div>
+    <div class="text-info__content">
+      {{'STATUS.WORST_SINCE' | translate: {value: 5} }}
+    </div>
+  </div>
 
-  <li>{{'STATUS.LAST_WEEK' | translate: {value: '130%'} }}</li>
-</ul>
+  <div class="text-info__element">
+    <i class="fas fa-map-marked-alt"></i>
+    <div class="text-info__header">Worst district</div>
+    <div class="text-info__content">
+      {{'STATUS.WORST_DISTRICT' | translate: {name: 'Nowa Huta', value: '200%'} }}
+    </div>
+  </div>
+
+  <div class="text-info__element">
+    <i class="far fa-chart-bar"></i>
+    <div class="text-info__header">Last 7 days avg</div>
+    <div class="text-info__content positive">
+      {{'STATUS.LAST_WEEK' | translate: {value: '130%'} }}
+    </div>
+  </div>
+
+  <div class="text-info__element">
+    <i class="far fa-chart-bar"></i>
+    <div class="text-info__header">Time machine</div>
+    <div class="text-info__content positive">
+      Last year (at {{today}}) the air was polluted by avg 120%
+    </div>
+  </div>
+</div>
