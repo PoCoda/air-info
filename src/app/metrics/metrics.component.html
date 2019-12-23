@@ -1,0 +1,6 @@
+<h1>Current pollution:</h1>
+<div class="metrics">
+    <div class='metric' *ngFor='let metric of metrics'>
+        <app-metric [name]='metric.name' [firstLine]=metric.percentage [secondLine]=metric.value></app-metric>
+    </div>
+</div>
