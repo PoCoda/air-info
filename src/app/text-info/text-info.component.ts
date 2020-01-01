@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ApiService } from '../api.service';
 
 @Component({
   selector: 'app-text-info',
@@ -8,8 +9,8 @@ import { Component, OnInit } from '@angular/core';
 export class TextInfosComponent implements OnInit {
   // faCoffee = faCoffee;
   today: string = new Date().getDate() + '/' + (new Date().getMonth() + 1) + '/' + (new Date().getFullYear() - 1);
-
-  constructor() { }
+  
+  constructor(public apiService: ApiService) { }
 
   ngOnInit() {
   }

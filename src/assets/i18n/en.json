@@ -1,9 +1,10 @@
 {
   "STATUS": {
     "MATCHES": "Pollution matches norms",
+    "DOESNT_MATCH": "Pollution doesn't match norms",
     "EXCEEDS": "Pollution exceeds norms",
-    "MATCHES_FOR": "Pollution exceeds norms for {{value}} days in a row",
-    "EXCEEDS_FOR": "Pollution matches norms for {value} days in a row",
+    "MATCHES_FOR": "Pollution matches norms for {{value}} days in a row",
+    "EXCEEDS_FOR": "Pollution exceeds norms for {value} days in a row",
     "WORST_SINCE": "Today the air is worst since {{value}} days",
     "BEST_SINCE": "Today the air is best since {{value}} days",
     "WORST_DISTRICT": "Worst district today is {{name}} - {{value}}",

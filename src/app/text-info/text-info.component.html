@@ -1,12 +1,14 @@
 <div class="text-info">
   <div class="text-info__element positive">
-    <i class="fas fa-check"></i>
+    <i *ngIf="(apiService.lastCurrentStatusResponse | async)?.matchesNorms" class="fas fa-check"></i>
+    <i *ngIf="!(apiService.lastCurrentStatusResponse | async)?.matchesNorms" class="fas fa-exclamation"></i>
     <div class="text-info__header">Status</div>
-    <div class="text-info__content positive">{{'STATUS.MATCHES' | translate}}</div>
+    <div *ngIf="(apiService.lastCurrentStatusResponse | async)?.matchesNorms" class="text-info__content positive">{{'STATUS.MATCHES' | translate}}</div>
+    <div *ngIf="!(apiService.lastCurrentStatusResponse | async)?.matchesNorms" class="text-info__content negative">{{'STATUS.DOESNT_MATCH' | translate}}</div>
   </div>
 
   <div class="text-info__element">
-    <i class="fas fa-paper-plane"></i>
+    <i class="fas fa-angle-double-right"></i>
     <div class="text-info__header">Streak</div>
     <div class="text-info__content">
       {{'STATUS.MATCHES_FOR' | translate: {value: 5} }}

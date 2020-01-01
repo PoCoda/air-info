@@ -1,12 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {ApiService, CurrentStatus} from '../api.service';
-import { Observable } from 'rxjs';
-// // TODO move to other file
-// export interface Metric {
-//   name: string;
-//   value: string;
-//   percentage: number;
-// }
+import { Observable, Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-current-status',
@@ -14,24 +8,6 @@ import { Observable } from 'rxjs';
   styleUrls: ['./current-status.component.scss']
 })
 export class CurrentStatusComponent implements OnInit {
-  //
-  // current-status: Metric[] = [
-  //   {
-  //     name: 'PM10',
-  //     value: '10ug',
-  //     percentage: 42
-  //   },
-  //   {
-  //     name: 'PM2.5',
-  //     value: '30ug',
-  //     percentage: 120
-  //   },
-  //   {
-  //     name: 'Harm Factor',
-  //     value: '',
-  //     percentage: 120
-  //   }
-  // ];
 
   harmFactor: number;
 

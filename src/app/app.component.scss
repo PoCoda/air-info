@@ -17,12 +17,14 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .app-container {
-    display: grid;
-    grid-template-columns: 60% 40%;
+    display: flex;
+    flex-flow: column;
+    // grid-template-columns: 60% 40%;
     margin: 8px 12px;
 }
 
 app-current-status {
-    grid-column-start: 2;
-    grid-row-start: 1;
+    margin-bottom: 32px;
+    // grid-column-start: 2;
+    // grid-row-start: 1;
 }

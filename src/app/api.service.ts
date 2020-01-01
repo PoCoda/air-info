@@ -21,9 +21,10 @@ export class ApiService {
 
   constructor(private http: HttpClient) { }
 
+  lastCurrentStatusResponse: Observable<CurrentStatus>;
   baseUrl = 'localhost:8080'; // test
 
   getCurrentStatus(): Observable<CurrentStatus> {
-    return this.http.get<CurrentStatus>('/current');
+    return this.lastCurrentStatusResponse = this.http.get<CurrentStatus>('/current');
   }
 }

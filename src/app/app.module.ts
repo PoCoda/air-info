@@ -9,6 +9,7 @@ import { CurrentStatusComponent } from './current-status/current-status.componen
 import {TranslateLoader, TranslateModule} from '@ngx-translate/core';
 import {HttpClient, HttpClientModule} from '@angular/common/http';
 import {TranslateHttpLoader} from '@ngx-translate/http-loader';
+import { FooterComponent } from './footer/footer.component';
 
 // AoT requires an exported function for factories
 export function HttpLoaderFactory(httpClient: HttpClient) {
@@ -21,7 +22,8 @@ export function HttpLoaderFactory(httpClient: HttpClient) {
     TextInfosComponent,
     HelloComponent,
     MetricComponent,
-    CurrentStatusComponent
+    CurrentStatusComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
