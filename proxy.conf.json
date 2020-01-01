@@ -1,0 +1,10 @@
+{
+    "/current": {
+      "target": "http://localhost:8080/current",
+      "secure": false,
+      "logLevel": "debug",
+      "pathRewrite": {
+        "^/current": ""
+      }
+    }
+  }

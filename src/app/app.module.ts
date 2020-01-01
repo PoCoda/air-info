@@ -5,7 +5,7 @@ import { AppComponent } from './app.component';
 import { TextInfosComponent } from './text-info/text-info.component';
 import { HelloComponent } from './hello/hello.component';
 import { MetricComponent } from './metric/metric.component';
-import { MetricsComponent } from './metrics/metrics.component';
+import { CurrentStatusComponent } from './current-status/current-status.component';
 import {TranslateLoader, TranslateModule} from '@ngx-translate/core';
 import {HttpClient, HttpClientModule} from '@angular/common/http';
 import {TranslateHttpLoader} from '@ngx-translate/http-loader';
@@ -21,7 +21,7 @@ export function HttpLoaderFactory(httpClient: HttpClient) {
     TextInfosComponent,
     HelloComponent,
     MetricComponent,
-    MetricsComponent
+    CurrentStatusComponent
   ],
   imports: [
     BrowserModule,
