@@ -6,5 +6,13 @@
       "pathRewrite": {
         "^/current": ""
       }
+    },
+    "/streak": {
+      "target": "http://localhost:8080/streak",
+      "secure": false,
+      "logLevel": "debug",
+      "pathRewrite": {
+        "^/streak": ""
+      }
     }
   }

@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {ApiService, CurrentStatus} from '../api.service';
+import {ApiService, CurrentStatusModel} from '../api.service';
 import { Observable, Subscription } from 'rxjs';
 
 @Component({
@@ -11,7 +11,7 @@ export class CurrentStatusComponent implements OnInit {
 
   harmFactor: number;
 
-  status: Observable<CurrentStatus>;
+  status: Observable<CurrentStatusModel>;
 
   constructor(private apiService: ApiService) {}
 

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { ApiService } from '../api.service';
+import { ApiService, CurrentStatusModel, StreakModel } from '../api.service';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-text-info',
@@ -9,10 +10,14 @@ import { ApiService } from '../api.service';
 export class TextInfosComponent implements OnInit {
   // faCoffee = faCoffee;
   today: string = new Date().getDate() + '/' + (new Date().getMonth() + 1) + '/' + (new Date().getFullYear() - 1);
-  
-  constructor(public apiService: ApiService) { }
+  status: Observable<CurrentStatusModel>;
+  streak: Observable<StreakModel>;
+
+  constructor(private apiService: ApiService) { }
 
   ngOnInit() {
+    this.status = this.apiService.getCurrentStatus();
+    this.streak = this.apiService.getStreak();
   }
 
 }
