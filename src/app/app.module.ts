@@ -2,14 +2,14 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
-import { TextInfosComponent } from './text-info/text-info.component';
-import { HelloComponent } from './hello/hello.component';
-import { MetricComponent } from './metric/metric.component';
-import { CurrentStatusComponent } from './current-status/current-status.component';
-import {TranslateLoader, TranslateModule} from '@ngx-translate/core';
-import {HttpClient, HttpClientModule} from '@angular/common/http';
-import {TranslateHttpLoader} from '@ngx-translate/http-loader';
-import { FooterComponent } from './footer/footer.component';
+import { TextInfoComponent } from './components/text-info/text-info.component';
+import { HelloComponent } from './components/hello/hello.component';
+import { MetricComponent } from './components/metric/metric.component';
+import { CurrentStatusComponent } from './components/current-status/current-status.component';
+import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { TranslateHttpLoader } from '@ngx-translate/http-loader';
+import { FooterComponent } from './components/footer/footer.component';
 
 // AoT requires an exported function for factories
 export function HttpLoaderFactory(httpClient: HttpClient) {
@@ -19,7 +19,7 @@ export function HttpLoaderFactory(httpClient: HttpClient) {
 @NgModule({
   declarations: [
     AppComponent,
-    TextInfosComponent,
+    TextInfoComponent,
     HelloComponent,
     MetricComponent,
     CurrentStatusComponent,

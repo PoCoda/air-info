@@ -7,12 +7,20 @@
         "^/current": ""
       }
     },
-    "/streak": {
-      "target": "http://localhost:8080/streak",
+    "/streak-exceeding": {
+      "target": "http://localhost:8080/streak-exceeding",
       "secure": false,
       "logLevel": "debug",
       "pathRewrite": {
-        "^/streak": ""
+        "^/streak-exceeding": ""
+      }
+    },
+    "/streak-matching": {
+      "target": "http://localhost:8080/streak-matching",
+      "secure": false,
+      "logLevel": "debug",
+      "pathRewrite": {
+        "^/streak-matching": ""
       }
     }
   }

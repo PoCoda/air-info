@@ -10,9 +10,8 @@
   <div class="text-info__element">
     <i class="fas fa-angle-double-right"></i>
     <div class="text-info__header">Streak</div>
-    <div class="text-info__content">
-      {{'STATUS.MATCHES_FOR' | translate: {value: (streak | async)?.days} }}
-    </div>
+    <div *ngIf="(status | async)?.matchesNorms" class="text-info__content">{{'STATUS.MATCHES_FOR' | translate: {value: (streak | async)?.days} }}</div>
+    <div *ngIf="!(status | async)?.matchesNorms" class="text-info__content">{{'STATUS.EXCEEDS_FOR' | translate: {value: (streak | async)?.days} }}</div>
   </div>
 
   <div class="text-info__element">

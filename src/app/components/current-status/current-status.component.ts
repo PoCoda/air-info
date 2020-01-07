@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {ApiService, CurrentStatusModel} from '../api.service';
+import {ApiService, CurrentStatusModel} from '../../services/api.service';
 import { Observable, Subscription } from 'rxjs';
 
 @Component({

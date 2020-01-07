@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { flatMap, first } from 'rxjs/operators';
 
 export interface CurrentStatusModel {
   pm10: { 
@@ -30,11 +31,21 @@ export class ApiService {
   baseUrl = 'localhost:8080'; // test
 
   getCurrentStatus(): Observable<CurrentStatusModel> {
-    return this.lastCurrentStatusResponse = this.http.get<CurrentStatusModel>('/current');
+    const currentStatusModel: Observable<CurrentStatusModel> = this.http.get<CurrentStatusModel>('/current');
+    return currentStatusModel;
   }
 
   getStreak(): Observable<StreakModel> {
-    return this.http.get<StreakModel>('/streak');
+    return this.getCurrentStatus().pipe( // TODO optimize getCurrentStatus(), try kind of time-defined memoization with expire time
+      flatMap((value: CurrentStatusModel) => {
+        if(value.matchesNorms) {
+          return this.http.get<StreakModel>('/streak-matching');
+        }
+        return this.http.get<StreakModel>('/streak-exceeding');
+      }),
+      first()
+    )
+    
 
   }
 }

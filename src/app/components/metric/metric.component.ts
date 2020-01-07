@@ -8,12 +8,13 @@ import { Component, OnInit, Input } from '@angular/core';
 export class MetricComponent implements OnInit {
 
   @Input() name: string;
-  @Input() firstLine: number;
-  @Input() secondLine: number;
+  @Input() percentage: number;
+  @Input() value: string;
 
   constructor() { }
 
   ngOnInit() {
+    console.log(this.value)
   }
 
 }
