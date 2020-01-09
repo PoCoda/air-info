@@ -51,10 +51,10 @@ export class ApiService {
   getBestBestWorstSince(): Observable<DaysModel> {
     return this.getCurrentStatus().pipe( // TODO optimize getCurrentStatus(), try kind of time-defined memoization with expire time
       flatMap((value: CurrentStatusModel) => {
-        // if(value.matchesNorms) {
+        if(value.matchesNorms) {
           return this.http.get<DaysModel>('/best-since');
-        // }
-        // return this.http.get<DaysModel>('/worst-since');
+        }
+        return this.http.get<DaysModel>('/worst-since');
       }),
       first()
     )
