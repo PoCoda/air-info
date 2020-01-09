@@ -7,6 +7,22 @@
         "^/current": ""
       }
     },
+    "/worst-since": {
+      "target": "http://localhost:8080/worst-since",
+      "secure": false,
+      "logLevel": "debug",
+      "pathRewrite": {
+        "^/worst-since": ""
+      }
+    },
+    "/best-since": {
+      "target": "http://localhost:8080/best-since",
+      "secure": false,
+      "logLevel": "debug",
+      "pathRewrite": {
+        "^/best-since": ""
+      }
+    },
     "/streak-exceeding": {
       "target": "http://localhost:8080/streak-exceeding",
       "secure": false,

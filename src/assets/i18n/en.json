@@ -5,8 +5,10 @@
     "EXCEEDS": "Pollution exceeds norms",
     "MATCHES_FOR": "Pollution matches norms for {{value}} days in a row",
     "EXCEEDS_FOR": "Pollution exceeds norms for {{value}} days in a row",
-    "WORST_SINCE": "Today the air is worst since {{value}} days",
-    "BEST_SINCE": "Today the air is best since {{value}} days",
+    "WORST_SINCE": "Worst Since",
+    "BEST_SINCe": "Best Since",
+    "WORST_SINCE_DAYS": "Today the air is worst in {{value}} days",
+    "BEST_SINCE_DAYS": "Today the air is best in {{value}} days",
     "WORST_DISTRICT": "Worst district today is {{name}} - {{value}}",
     "BEST_DISTRICT": "Best district today is {{name}} - {{value}}",
     "LAST_WEEK": "Last week the air was polluted in avg {{value}}"

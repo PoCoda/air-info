@@ -15,7 +15,7 @@ export interface CurrentStatusModel {
   matchesNorms: boolean
 }
 
-export interface StreakModel {
+export interface DaysModel {
   days: number;
 }
 
@@ -34,18 +34,29 @@ export class ApiService {
     const currentStatusModel: Observable<CurrentStatusModel> = this.http.get<CurrentStatusModel>('/current');
     return currentStatusModel;
   }
-
-  getStreak(): Observable<StreakModel> {
+  
+  getStreak(): Observable<DaysModel> {
+    // https://blog.fullstacktraining.com/caching-http-requests-with-angular/
     return this.getCurrentStatus().pipe( // TODO optimize getCurrentStatus(), try kind of time-defined memoization with expire time
       flatMap((value: CurrentStatusModel) => {
         if(value.matchesNorms) {
-          return this.http.get<StreakModel>('/streak-matching');
+          return this.http.get<DaysModel>('/streak-matching');
         }
-        return this.http.get<StreakModel>('/streak-exceeding');
+        return this.http.get<DaysModel>('/streak-exceeding');
       }),
       first()
     )
-    
+  }
 
+  getBestBestWorstSince(): Observable<DaysModel> {
+    return this.getCurrentStatus().pipe( // TODO optimize getCurrentStatus(), try kind of time-defined memoization with expire time
+      flatMap((value: CurrentStatusModel) => {
+        // if(value.matchesNorms) {
+          return this.http.get<DaysModel>('/best-since');
+        // }
+        // return this.http.get<DaysModel>('/worst-since');
+      }),
+      first()
+    )
   }
 }
