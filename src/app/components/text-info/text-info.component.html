@@ -1,5 +1,5 @@
 <div class="text-info">
-  <div class="text-info__element positive">
+  <div class="text-info__element">
     <i *ngIf="(status | async)?.matchesNorms" class="fas fa-check"></i>
     <i *ngIf="!(status | async)?.matchesNorms" class="fas fa-exclamation"></i>
     <div class="text-info__header">Status</div>
@@ -36,17 +36,25 @@
 
   <div class="text-info__element">
     <i class="far fa-chart-bar"></i>
-    <div class="text-info__header">Last 7 days avg</div>
-    <div class="text-info__content positive">
-      {{'STATUS.LAST_WEEK' | translate: {value: '130%'} }}
+    <div class="text-info__header">This week average</div>
+    <div class="text-info__content" [class.positive]="((thisWeekAveragePercentage | async)?.percentage) <= 100" [class.negative]="((thisWeekAveragePercentage | async)?.percentage) > 100">
+      {{'STATUS.THIS_WEEK' | translate: {value: ((thisWeekAveragePercentage | async)?.percentage | number:'1.0-0') + '%'} }}
     </div>
   </div>
 
   <div class="text-info__element">
+    <i class="far fa-chart-bar"></i>
+    <div class="text-info__header">Last week average</div>
+    <div class="text-info__content" [class.positive]="((lastWeekAveragePercentage | async)?.percentage) <= 100" [class.negative]="((lastWeekAveragePercentage | async)?.percentage) > 100">
+      {{'STATUS.LAST_WEEK' | translate: {value: ((lastWeekAveragePercentage | async)?.percentage | number:'1.0-0') + '%'} }}
+    </div>
+  </div>
+
+  <!-- <div class="text-info__element">
     <i class="far fa-chart-bar"></i>
     <div class="text-info__header">Time machine</div>
     <div class="text-info__content positive">
       Last year (at {{today}}) the air was polluted by avg 120%
     </div>
   </div>
-</div>
+</div> -->

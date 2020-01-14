@@ -19,6 +19,9 @@ export interface DaysModel {
   days: number;
 }
 
+export interface PercentageModel {
+  percentage: number;
+}
 
 @Injectable({
   providedIn: 'root'
@@ -29,8 +32,13 @@ export class ApiService {
 
   lastCurrentStatusResponse: Observable<CurrentStatusModel>;
   baseUrl = 'localhost:8080'; // test
+  currentStatus: Observable<CurrentStatusModel> = this._getCurrentStatus();
 
   getCurrentStatus(): Observable<CurrentStatusModel> {
+    return this.currentStatus;
+  }
+
+  _getCurrentStatus(): Observable<CurrentStatusModel> {
     const currentStatusModel: Observable<CurrentStatusModel> = this.http.get<CurrentStatusModel>('/current');
     return currentStatusModel;
   }
@@ -58,5 +66,13 @@ export class ApiService {
       }),
       first()
     )
+  }
+
+  getThisWeekAveragePercentage(): Observable<PercentageModel> {
+    return this.http.get<PercentageModel>('/this-week-average');
+  }
+
+  getLastWeekAveragePercentage(): Observable<PercentageModel> {
+    return this.http.get<PercentageModel>('/last-week-average');
   }
 }

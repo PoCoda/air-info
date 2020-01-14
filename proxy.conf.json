@@ -38,5 +38,21 @@
       "pathRewrite": {
         "^/streak-matching": ""
       }
+    },
+    "/this-week-average": {
+      "target": "http://localhost:8080/this-week-average",
+      "secure": false,
+      "logLevel": "debug",
+      "pathRewrite": {
+        "^/this-week-average": ""
+      }
+    },
+    "/last-week-average": {
+      "target": "http://localhost:8080/last-week-average",
+      "secure": false,
+      "logLevel": "debug",
+      "pathRewrite": {
+        "^/last-week-average": ""
+      }
     }
   }
