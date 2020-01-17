@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ApiService, CurrentStatusModel, DaysModel, PercentageModel } from '../../services/api.service';
+import { ApiService, CurrentStatusModel, DaysModel, PercentageModel, WorstDistrictModel } from '../../services/api.service';
 import { Observable } from 'rxjs';
 
 @Component({
@@ -14,6 +14,7 @@ export class TextInfoComponent implements OnInit {
   bestWorstSince: Observable<DaysModel>;
   lastWeekAveragePercentage: Observable<PercentageModel>;
   thisWeekAveragePercentage: Observable<PercentageModel>;
+  worstDistrict: Observable<WorstDistrictModel>;
 
   constructor(private apiService: ApiService) { }
 
@@ -23,6 +24,7 @@ export class TextInfoComponent implements OnInit {
     this.bestWorstSince = this.apiService.getBestBestWorstSince();
     this.thisWeekAveragePercentage = this.apiService.getThisWeekAveragePercentage();
     this.lastWeekAveragePercentage = this.apiService.getLastWeekAveragePercentage();
+    this.worstDistrict = this.apiService.getWorstDistrict();
   }
 
 }

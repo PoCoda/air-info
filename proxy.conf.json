@@ -54,5 +54,13 @@
       "pathRewrite": {
         "^/last-week-average": ""
       }
+    },
+    "/worst-district": {
+      "target": "http://localhost:8080/worst-district",
+      "secure": false,
+      "logLevel": "debug",
+      "pathRewrite": {
+        "^/worst-district": ""
+      }
     }
   }

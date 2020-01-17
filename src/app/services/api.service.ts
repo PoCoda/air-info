@@ -23,6 +23,10 @@ export interface PercentageModel {
   percentage: number;
 }
 
+export interface WorstDistrictModel extends PercentageModel {
+  name: string;
+}
+
 @Injectable({
   providedIn: 'root'
 })
@@ -74,5 +78,9 @@ export class ApiService {
 
   getLastWeekAveragePercentage(): Observable<PercentageModel> {
     return this.http.get<PercentageModel>('/last-week-average');
+  }
+
+  getWorstDistrict(): Observable<WorstDistrictModel> {
+    return this.http.get<WorstDistrictModel>('/worst-district');
   }
 }

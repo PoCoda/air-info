@@ -30,7 +30,7 @@
     <i class="fas fa-map-marked-alt"></i>
     <div class="text-info__header">Worst district</div>
     <div class="text-info__content">
-      {{'STATUS.WORST_DISTRICT' | translate: {name: 'Nowa Huta', value: '200%'} }}
+      {{'STATUS.WORST_DISTRICT' | translate: {name: (worstDistrict | async)?.name, value: ((worstDistrict | async)?.percentage | number:'1.0-0') + '%'} }}
     </div>
   </div>
 
