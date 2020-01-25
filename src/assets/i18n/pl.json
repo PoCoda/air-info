@@ -1,0 +1,26 @@
+{
+    "CURRENT_POLLUTION": "Aktualne zanieczyszczenie w Krakowie",
+    "MATCHES": "Zanieczyszczenie spełnia normy",
+    "DOESNT_MATCH": "Zanieczyszczenie przekracza normy",
+    "EXCEEDS": "Zanieczyszczenie przekracza normy",
+    "STREAK": "Ciąg",
+    "MATCHES_FOR": "Zanieczyszczenie spełnia normy od {{value}} dni",
+    "EXCEEDS_FOR": "Zanieczyszczenie przekracza normy od {{value}} dni",
+    "WORST_SINCE": "Najgorsze od",
+    "BEST_SINCE": "Najlepsze od",
+    "WORST_SINCE_DAYS": "Powietrze jest najgorsze od {{value}} dni",
+    "BEST_SINCE_DAYS": "Powietrze jest najlepsze od {{value}} dni",
+    "WORST_DISTRICT": "Najgorsza dzielnica to {{name}}: {{value}}",
+    "WORST_DISTRICT_HEADER": "Najgorsza dzielnica",
+    "BEST_DISTRICT": "Najlepsza dzielnica to {{name}}: {{value}}",
+    "LAST_WEEK": "W zeszłym tygodniu średnie zanieczyszczenie powietrza wynosiło {{value}}",
+    "THIS_WEEK": "W tym tygodniu średnie zanieczyszczenie powietrza wynosi {{value}}",
+    "THIS_WEEK_AVERAGE": "W tym tygodniu",
+    "LAST_WEEK_AVERAGE": "W zeszłym tygodniu",
+    "FOOTER": {
+        "CURRENT_STATUS_REPRESENTS": "Aktualne zaniczyszczenie jest średnią ważoną liczoną w promieniu 1.5KM wokół centrum Krakowa",
+        "PERCENTAGE_CALCULATED_BY": "Zanieczyszcznie procentowe liczone w stosunku do norm WHO",
+        "HARM_FACTOR": "Harm factor jest definiowany jako (2 * PM2.5 + PM10) / 3. Włącza on większą szkodliwość PM2.5",
+        "API_CRIDENTIALS": "Wygenerowano dzięki Airly API"
+    }
+}

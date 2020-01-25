@@ -1,66 +1,66 @@
 {
     "/current": {
-      "target": "http://localhost:8080/current",
-      "secure": false,
-      "logLevel": "debug",
-      "pathRewrite": {
-        "^/current": ""
-      }
+        "target": "http://localhost:8080/current",
+        "secure": false,
+        "logLevel": "debug",
+        "pathRewrite": {
+            "^/current": ""
+        }
     },
     "/worst-since": {
-      "target": "http://localhost:8080/worst-since",
-      "secure": false,
-      "logLevel": "debug",
-      "pathRewrite": {
-        "^/worst-since": ""
-      }
+        "target": "http://localhost:8080/worst-since",
+        "secure": false,
+        "logLevel": "debug",
+        "pathRewrite": {
+            "^/worst-since": ""
+        }
     },
     "/best-since": {
-      "target": "http://localhost:8080/best-since",
-      "secure": false,
-      "logLevel": "debug",
-      "pathRewrite": {
-        "^/best-since": ""
-      }
+        "target": "http://localhost:8080/best-since",
+        "secure": false,
+        "logLevel": "debug",
+        "pathRewrite": {
+            "^/best-since": ""
+        }
     },
     "/streak-exceeding": {
-      "target": "http://localhost:8080/streak-exceeding",
-      "secure": false,
-      "logLevel": "debug",
-      "pathRewrite": {
-        "^/streak-exceeding": ""
-      }
+        "target": "http://localhost:8080/streak-exceeding",
+        "secure": false,
+        "logLevel": "debug",
+        "pathRewrite": {
+            "^/streak-exceeding": ""
+        }
     },
     "/streak-matching": {
-      "target": "http://localhost:8080/streak-matching",
-      "secure": false,
-      "logLevel": "debug",
-      "pathRewrite": {
-        "^/streak-matching": ""
-      }
+        "target": "http://localhost:8080/streak-matching",
+        "secure": false,
+        "logLevel": "debug",
+        "pathRewrite": {
+            "^/streak-matching": ""
+        }
     },
     "/this-week-average": {
-      "target": "http://localhost:8080/this-week-average",
-      "secure": false,
-      "logLevel": "debug",
-      "pathRewrite": {
-        "^/this-week-average": ""
-      }
+        "target": "http://localhost:8080/this-week-average",
+        "secure": false,
+        "logLevel": "debug",
+        "pathRewrite": {
+            "^/this-week-average": ""
+        }
     },
     "/last-week-average": {
-      "target": "http://localhost:8080/last-week-average",
-      "secure": false,
-      "logLevel": "debug",
-      "pathRewrite": {
-        "^/last-week-average": ""
-      }
+        "target": "http://localhost:8080/last-week-average",
+        "secure": false,
+        "logLevel": "debug",
+        "pathRewrite": {
+            "^/last-week-average": ""
+        }
     },
     "/worst-district": {
-      "target": "http://localhost:8080/worst-district",
-      "secure": false,
-      "logLevel": "debug",
-      "pathRewrite": {
-        "^/worst-district": ""
-      }
+        "target": "http://localhost:8080/worst-district",
+        "secure": false,
+        "logLevel": "debug",
+        "pathRewrite": {
+            "^/worst-district": ""
+        }
     }
-  }
+}

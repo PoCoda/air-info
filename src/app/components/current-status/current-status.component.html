@@ -1,10 +1,10 @@
-<h1>Current pollution:</h1>
+<h1>{{'CURRENT_POLLUTION' | translate}}</h1>
 <div class="current-status">
-  <app-metric [name]='"PM2.5"' [percentage]="(status | async)?.pm25?.percentage | number:'1.0-0'" [value]="((status | async)?.pm25?.value | number:'1.0-0') + 'μg'"></app-metric>
-  <app-metric [name]='"PM10"' [percentage]="(status | async)?.pm10?.percentage | number:'1.0-0'" [value]="((status | async)?.pm10?.value | number:'1.0-0') + 'μg'"></app-metric>
-  <div class="equals">≈</div>
-  <app-metric [name]='"Harm factor"' [percentage]="harmFactor | number:'1.0-0'">
-    <!--    <i title="test" class="fas fa-question-circle"></i>-->
-  </app-metric>
-  
+    <app-metric [name]='"PM2.5"' [percentage]="(status | async)?.pm25?.percentage | number:'1.0-0'" [value]="((status | async)?.pm25?.value | number:'1.0-0') + 'μg'"></app-metric>
+    <app-metric [name]='"PM10"' [percentage]="(status | async)?.pm10?.percentage | number:'1.0-0'" [value]="((status | async)?.pm10?.value | number:'1.0-0') + 'μg'"></app-metric>
+    <div class="equals">≈</div>
+    <app-metric [name]='"Harm factor"' [percentage]="harmFactor | number:'1.0-0'">
+        <!--    <i title="test" class="fas fa-question-circle"></i>-->
+    </app-metric>
+
 </div>

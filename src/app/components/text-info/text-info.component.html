@@ -1,56 +1,56 @@
 <div class="text-info">
-  <div class="text-info__element">
-    <i *ngIf="(status | async)?.matchesNorms" class="fas fa-check"></i>
-    <i *ngIf="!(status | async)?.matchesNorms" class="fas fa-exclamation"></i>
-    <div class="text-info__header">Status</div>
-    <div *ngIf="(status | async)?.matchesNorms" class="text-info__content positive">{{'STATUS.MATCHES' | translate}}</div>
-    <div *ngIf="!(status | async)?.matchesNorms" class="text-info__content negative">{{'STATUS.DOESNT_MATCH' | translate}}</div>
-  </div>
-
-  <div class="text-info__element">
-    <i class="fas fa-angle-double-right"></i>
-    <div class="text-info__header">Streak</div>
-    <div *ngIf="(status | async)?.matchesNorms" class="text-info__content">{{'STATUS.MATCHES_FOR' | translate: {value: (streak | async)?.days} }}</div>
-    <div *ngIf="!(status | async)?.matchesNorms" class="text-info__content">{{'STATUS.EXCEEDS_FOR' | translate: {value: (streak | async)?.days} }}</div>
-  </div>
-
-  <div class="text-info__element">
-    <i class="fas fa-history"></i>
-    <div *ngIf="(status | async)?.matchesNorms" class="text-info__header">{{'STATUS.BEST_SINCE' | translate}}</div>
-    <div *ngIf="!(status | async)?.matchesNorms" class="text-info__header">{{'STATUS.WORST_SINCE' | translate}}</div>
-    <div *ngIf="(status | async)?.matchesNorms" class="text-info__content">
-      {{'STATUS.BEST_SINCE_DAYS' | translate: {value: (bestWorstSince | async)?.days} }}
+    <div class="text-info__element">
+        <i *ngIf="(status | async)?.matchesNorms" class="fas fa-check"></i>
+        <i *ngIf="!(status | async)?.matchesNorms" class="fas fa-exclamation"></i>
+        <div class="text-info__header">Status</div>
+        <div *ngIf="(status | async)?.matchesNorms" class="text-info__content positive">{{'MATCHES' | translate}}</div>
+        <div *ngIf="!(status | async)?.matchesNorms" class="text-info__content negative">{{'DOESNT_MATCH' | translate}}</div>
     </div>
-    <div *ngIf="!(status | async)?.matchesNorms" class="text-info__content">
-      {{'STATUS.WORST_SINCE_DAYS' | translate: {value: (bestWorstSince | async)?.days} }}
-    </div>
-  </div>
 
-  <div class="text-info__element">
-    <i class="fas fa-map-marked-alt"></i>
-    <div class="text-info__header">Worst district</div>
-    <div class="text-info__content">
-      {{'STATUS.WORST_DISTRICT' | translate: {name: (worstDistrict | async)?.name, value: ((worstDistrict | async)?.percentage | number:'1.0-0') + '%'} }}
+    <div class="text-info__element">
+        <i class="fas fa-angle-double-right"></i>
+        <div class="text-info__header">{{"STREAK" | translate}}</div>
+        <div *ngIf="(status | async)?.matchesNorms" class="text-info__content">{{'MATCHES_FOR' | translate: {value: (streak | async)?.days} }}</div>
+        <div *ngIf="!(status | async)?.matchesNorms" class="text-info__content">{{'EXCEEDS_FOR' | translate: {value: (streak | async)?.days} }}</div>
     </div>
-  </div>
 
-  <div class="text-info__element">
-    <i class="far fa-chart-bar"></i>
-    <div class="text-info__header">This week average</div>
-    <div class="text-info__content" [class.positive]="((thisWeekAveragePercentage | async)?.percentage) <= 100" [class.negative]="((thisWeekAveragePercentage | async)?.percentage) > 100">
-      {{'STATUS.THIS_WEEK' | translate: {value: ((thisWeekAveragePercentage | async)?.percentage | number:'1.0-0') + '%'} }}
+    <div class="text-info__element">
+        <i class="fas fa-history"></i>
+        <div *ngIf="(status | async)?.matchesNorms" class="text-info__header">{{'BEST_SINCE' | translate}}</div>
+        <div *ngIf="!(status | async)?.matchesNorms" class="text-info__header">{{'WORST_SINCE' | translate}}</div>
+        <div *ngIf="(status | async)?.matchesNorms" class="text-info__content">
+            {{'BEST_SINCE_DAYS' | translate: {value: (bestWorstSince | async)?.days} }}
+        </div>
+        <div *ngIf="!(status | async)?.matchesNorms" class="text-info__content">
+            {{'WORST_SINCE_DAYS' | translate: {value: (bestWorstSince | async)?.days} }}
+        </div>
     </div>
-  </div>
 
-  <div class="text-info__element">
-    <i class="far fa-chart-bar"></i>
-    <div class="text-info__header">Last week average</div>
-    <div class="text-info__content" [class.positive]="((lastWeekAveragePercentage | async)?.percentage) <= 100" [class.negative]="((lastWeekAveragePercentage | async)?.percentage) > 100">
-      {{'STATUS.LAST_WEEK' | translate: {value: ((lastWeekAveragePercentage | async)?.percentage | number:'1.0-0') + '%'} }}
+    <div class="text-info__element">
+        <i class="fas fa-map-marked-alt"></i>
+        <div class="text-info__header">{{'WORST_DISTRICT_HEADER' | translate}}</div>
+        <div class="text-info__content">
+            {{'WORST_DISTRICT' | translate: {name: (worstDistrict | async)?.name, value: ((worstDistrict | async)?.percentage | number:'1.0-0') + '%'} }}
+        </div>
     </div>
-  </div>
 
-  <!-- <div class="text-info__element">
+    <div class="text-info__element">
+        <i class="far fa-chart-bar"></i>
+        <div class="text-info__header">{{'THIS_WEEK_AVERAGE' | translate}}</div>
+        <div class="text-info__content" [class.positive]="((thisWeekAveragePercentage | async)?.percentage) <= 100" [class.negative]="((thisWeekAveragePercentage | async)?.percentage) > 100">
+            {{'THIS_WEEK' | translate: {value: ((thisWeekAveragePercentage | async)?.percentage | number:'1.0-0') + '%'} }}
+        </div>
+    </div>
+
+    <div class="text-info__element">
+        <i class="far fa-chart-bar"></i>
+        <div class="text-info__header">{{'LAST_WEEK_AVERAGE' | translate}}</div>
+        <div class="text-info__content" [class.positive]="((lastWeekAveragePercentage | async)?.percentage) <= 100" [class.negative]="((lastWeekAveragePercentage | async)?.percentage) > 100">
+            {{'LAST_WEEK' | translate: {value: ((lastWeekAveragePercentage | async)?.percentage | number:'1.0-0') + '%'} }}
+        </div>
+    </div>
+
+    <!-- <div class="text-info__element">
     <i class="far fa-chart-bar"></i>
     <div class="text-info__header">Time machine</div>
     <div class="text-info__content positive">

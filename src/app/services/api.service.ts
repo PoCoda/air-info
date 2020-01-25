@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { flatMap, first } from 'rxjs/operators';
+import { environment } from 'src/environments/environment';
 
 export interface CurrentStatusModel {
   pm10: { 
@@ -35,7 +36,7 @@ export class ApiService {
   constructor(private http: HttpClient) { }
 
   lastCurrentStatusResponse: Observable<CurrentStatusModel>;
-  baseUrl = 'localhost:8080'; // test
+  baseUrl = environment.api; // test
   currentStatus: Observable<CurrentStatusModel> = this._getCurrentStatus();
 
   getCurrentStatus(): Observable<CurrentStatusModel> {
@@ -43,7 +44,7 @@ export class ApiService {
   }
 
   _getCurrentStatus(): Observable<CurrentStatusModel> {
-    const currentStatusModel: Observable<CurrentStatusModel> = this.http.get<CurrentStatusModel>('/current');
+    const currentStatusModel: Observable<CurrentStatusModel> = this.http.get<CurrentStatusModel>(this.baseUrl + '/current');
     return currentStatusModel;
   }
   
@@ -52,9 +53,9 @@ export class ApiService {
     return this.getCurrentStatus().pipe( // TODO optimize getCurrentStatus(), try kind of time-defined memoization with expire time
       flatMap((value: CurrentStatusModel) => {
         if(value.matchesNorms) {
-          return this.http.get<DaysModel>('/streak-matching');
+          return this.http.get<DaysModel>(this.baseUrl + '/streak-matching');
         }
-        return this.http.get<DaysModel>('/streak-exceeding');
+        return this.http.get<DaysModel>(this.baseUrl + '/streak-exceeding');
       }),
       first()
     )
@@ -64,23 +65,23 @@ export class ApiService {
     return this.getCurrentStatus().pipe( // TODO optimize getCurrentStatus(), try kind of time-defined memoization with expire time
       flatMap((value: CurrentStatusModel) => {
         if(value.matchesNorms) {
-          return this.http.get<DaysModel>('/best-since');
+          return this.http.get<DaysModel>(this.baseUrl + '/best-since');
         }
-        return this.http.get<DaysModel>('/worst-since');
+        return this.http.get<DaysModel>(this.baseUrl + '/worst-since');
       }),
       first()
     )
   }
 
   getThisWeekAveragePercentage(): Observable<PercentageModel> {
-    return this.http.get<PercentageModel>('/this-week-average');
+    return this.http.get<PercentageModel>(this.baseUrl + '/this-week-average');
   }
 
   getLastWeekAveragePercentage(): Observable<PercentageModel> {
-    return this.http.get<PercentageModel>('/last-week-average');
+    return this.http.get<PercentageModel>(this.baseUrl + '/last-week-average');
   }
 
   getWorstDistrict(): Observable<WorstDistrictModel> {
-    return this.http.get<WorstDistrictModel>('/worst-district');
+    return this.http.get<WorstDistrictModel>(this.baseUrl + '/worst-district');
   }
 }
