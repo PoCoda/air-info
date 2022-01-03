@@ -44,7 +44,6 @@ export function HttpLoaderFactory(httpClient: HttpClient) {
   ],
   providers: [
     RequestCache,
-    { provide: HTTP_INTERCEPTORS, useClass: CachingInterceptor, multi: true }
   ],
   bootstrap: [AppComponent]
 })

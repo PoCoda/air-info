@@ -52,9 +52,7 @@ app-current-status {
 }
 
 .user-elements {
-  height: 0;
-  // display: inline-flex;
-  text-align: right;
+//   text-align: right;
 }
 
 .login-button {
@@ -69,6 +67,9 @@ app-current-status {
 }
 
 .login-container {
+  position: fixed;
+  left: 0;
+  top: 0;
   background: rgba(0, 0, 0, 0.7);
   // perspective: 2000px;
   min-height: 100%;
@@ -81,15 +82,20 @@ app-current-status {
 }
 
 app-user-menu {
-    z-index: 1;
+  z-index: 1;
+  margin-left: auto;
+
+  display: flex;
+  flex-direction: column;
+  height: 0;
 }
 
 $defaultColor: white;
 $noFocus: white;
 
 @mixin placeholder() {
-    color: $noFocus;
-    font-size: 1em;
+  color: $noFocus;
+  font-size: 1em;
 }
 
 .login {
@@ -157,7 +163,6 @@ $noFocus: white;
     margin-top: 0.8em;
     padding: 0.2vmax 6vmax 0.2vmax 6vmax;
     color: inherit;
-    font-family: Lato Light;
     border: none;
     background: #003953;
     color: $defaultColor;

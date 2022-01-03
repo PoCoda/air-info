@@ -2,20 +2,32 @@
     <button (click)="showLoginOverlay()" class="login-button">Login</button>
 
     <button (click)="showRegisterOverlay()" class="register-button">Register</button>
+
+    <div *ngIf="(userService?.$user | async)">
+        change city:
+        <button (click)="changeCity('KRAKOW')">KRAKOW</button>
+        <button (click)="changeCity('WARSAW')">WARSAW</button>
+        <button (click)="changeCity('GDANSK')">GDANSK</button>
+    </div>
+</div>
+
+<div *ngIf="(userService?.$user | async)">
+    <pre>{{userService?.$user | async | json}}</pre>
 </div>
 
 <div *ngIf="isOpen" class="login-container visible">
     <form [formGroup]="userForm" (ngSubmit)="onSubmit()" class="login">
         <div class="inputs">
-            <input autofocus formControlName="login" autocomplete="off" id="login" placeholder="Login" type="text" autofocus />
+            <input formControlName="login" autocomplete="off" id="login" placeholder="Login" type="text"
+                autofocus />
             <input formControlName="password" autocomplete="off" id="password" placeholder="Password" type="password" />
             <button class="login-bt" type="submit">{{variant === 'LOGIN' ? 'ZALOGUJ' : 'POTWIERDŹ'}}</button>
         </div>
-        <a href="#" class="register" (click)="toggleLoginRegister()">
+        <a class="register" (click)="toggleLoginRegister()">
             {{variant === 'LOGIN' ? 'Zarejestruj się' : 'Zaloguj się'}}
         </a>
 
-        <button (click)="hideOverlay">Anuluj</button>
+        <button (click)="hideOverlay()">Anuluj</button>
     </form>
 
 </div>

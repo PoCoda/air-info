@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ApiService, CurrentStatusModel, DaysModel, PercentageModel, WorstDistrictModel } from '../../services/api.service';
+import { ApiService, CurrentStatusModel, DaysModel, PercentageModel, WorstDistrictModel } from '../../services/api/api.service';
 import { Observable } from 'rxjs';
 
 @Component({
