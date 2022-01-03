@@ -5,9 +5,9 @@
 
     <div *ngIf="(userService?.$user | async)">
         change city:
-        <button (click)="changeCity('KRAKOW')">KRAKOW</button>
-        <button (click)="changeCity('WARSAW')">WARSAW</button>
-        <button (click)="changeCity('GDANSK')">GDANSK</button>
+        <button (click)="changeCity('KRAKOW')" class="city">KRAKOW</button>
+        <button (click)="changeCity('WARSAW')" class="city">WARSAW</button>
+        <button (click)="changeCity('GDANSK')" class="city">GDANSK</button>
     </div>
 </div>
 
