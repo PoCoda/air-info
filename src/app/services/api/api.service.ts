@@ -50,10 +50,22 @@ export class ApiService {
     return this.currentStatus;
   }
 
+  getParamsFromUrl() {
+    const url = window.location.href;
+    const params = new URLSearchParams(url.split('?')[1]);
+    return params;
+  }
+
+  getLastPathSegment(): string {
+    return window.location.pathname.split('/').pop();
+  }
+
   _getCurrentStatus(): Observable<CurrentStatusModel> {
+    const city = this.getLastPathSegment();
+
     const currentStatusModel: Observable<CurrentStatusModel> = this.http.get<CurrentStatusModel>(this.baseUrl + '/info', {
       params: {
-        CITY: 'WARSAW'
+        city: city || 'KRAKOW'
       }
     });
     return currentStatusModel;

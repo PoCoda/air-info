@@ -1,18 +1,4 @@
 <h1>{{(status | async)?.weather?.location}}</h1>
-<h3>{{'CURRENT_POLLUTION' | translate}}</h3>
-<div class="current-status">
-    <app-metric [name]='"PM2.5"' [percentage]="(status | async)?.pollution?.pm25?.percentage | number:'1.0-0'"
-        [value]="((status | async)?.pollution?.pm25?.value | number:'1.0-0') + 'μg'"></app-metric>
-    <app-metric [name]='"PM10"' [percentage]="(status | async)?.pollution?.pm10?.percentage | number:'1.0-0'"
-        [value]="((status | async)?.pollution?.pm10?.value | number:'1.0-0') + 'μg'"></app-metric>
-    <div class="equals">≈</div>
-    <app-metric [name]='"Harm factor"' [percentage]="harmFactor | number:'1.0-0'">
-        <!--    <i title="test" class="fas fa-question-circle"></i>-->
-    </app-metric>
-</div>
-
-<app-text-info></app-text-info>
-
 
 <h3>Aktualna pogoda</h3>
 <div class="current-status">
@@ -27,3 +13,17 @@
 <div class="metric">
     <h5>Condition: {{(status | async)?.weather?.condition}}</h5>
 </div>
+
+<h3>{{'CURRENT_POLLUTION' | translate}}</h3>
+<div class="current-status">
+    <app-metric [name]='"PM2.5"' [percentage]="(status | async)?.pollution?.pm25?.percentage | number:'1.0-0'"
+        [value]="((status | async)?.pollution?.pm25?.value | number:'1.0-0') + 'μg'"></app-metric>
+    <app-metric [name]='"PM10"' [percentage]="(status | async)?.pollution?.pm10?.percentage | number:'1.0-0'"
+        [value]="((status | async)?.pollution?.pm10?.value | number:'1.0-0') + 'μg'"></app-metric>
+    <div class="equals">≈</div>
+    <app-metric [name]='"Harm factor"' [percentage]="harmFactor | number:'1.0-0'">
+        <!--    <i title="test" class="fas fa-question-circle"></i>-->
+    </app-metric>
+</div>
+
+<app-text-info></app-text-info>

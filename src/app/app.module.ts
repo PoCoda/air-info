@@ -12,6 +12,8 @@ import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { FooterComponent } from './components/footer/footer.component';
 import { RequestCache } from './services/request-cache.service';
 import { CachingInterceptor } from './services/caching-interceptor.service';
+import { UserMenuComponent } from './components/user-menu/user-menu.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 // AoT requires an exported function for factories
 export function HttpLoaderFactory(httpClient: HttpClient) {
@@ -25,7 +27,8 @@ export function HttpLoaderFactory(httpClient: HttpClient) {
     HelloComponent,
     MetricComponent,
     CurrentStatusComponent,
-    FooterComponent
+    FooterComponent,
+    UserMenuComponent
   ],
   imports: [
     BrowserModule,
@@ -37,6 +40,7 @@ export function HttpLoaderFactory(httpClient: HttpClient) {
         deps: [HttpClient]
       }
     }),
+    ReactiveFormsModule
   ],
   providers: [
     RequestCache,
