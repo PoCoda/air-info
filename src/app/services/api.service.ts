@@ -5,15 +5,22 @@ import { flatMap, first } from 'rxjs/operators';
 import { environment } from 'src/environments/environment';
 
 export interface CurrentStatusModel {
-  pm10: { 
-    value: number, 
-    percentage: number 
-  }, 
-  pm25: {
-     value: number
-     percentage: number 
-  }, 
-  matchesNorms: boolean
+  pollution: {
+    pm10: {
+      value: number,
+      percentage: number
+    },
+    pm25: {
+      value: number
+      percentage: number
+    },
+    matchesNorms: boolean
+  },
+  wather: {
+    location: string,
+    temp: number,
+    condition: string
+  }
 }
 
 export interface DaysModel {
@@ -44,15 +51,19 @@ export class ApiService {
   }
 
   _getCurrentStatus(): Observable<CurrentStatusModel> {
-    const currentStatusModel: Observable<CurrentStatusModel> = this.http.get<CurrentStatusModel>(this.baseUrl + '/current');
+    const currentStatusModel: Observable<CurrentStatusModel> = this.http.get<CurrentStatusModel>(this.baseUrl + '/info', {
+      params: {
+        CITY: 'WARSAW'
+      }
+    });
     return currentStatusModel;
   }
-  
+
   getStreak(): Observable<DaysModel> {
     // https://blog.fullstacktraining.com/caching-http-requests-with-angular/
     return this.getCurrentStatus().pipe( // TODO optimize getCurrentStatus(), try kind of time-defined memoization with expire time
       flatMap((value: CurrentStatusModel) => {
-        if(value.matchesNorms) {
+        if (value.pollution.matchesNorms) {
           return this.http.get<DaysModel>(this.baseUrl + '/streak-matching');
         }
         return this.http.get<DaysModel>(this.baseUrl + '/streak-exceeding');
@@ -64,7 +75,7 @@ export class ApiService {
   getBestBestWorstSince(): Observable<DaysModel> {
     return this.getCurrentStatus().pipe( // TODO optimize getCurrentStatus(), try kind of time-defined memoization with expire time
       flatMap((value: CurrentStatusModel) => {
-        if(value.matchesNorms) {
+        if (value.pollution.matchesNorms) {
           return this.http.get<DaysModel>(this.baseUrl + '/best-since');
         }
         return this.http.get<DaysModel>(this.baseUrl + '/worst-since');

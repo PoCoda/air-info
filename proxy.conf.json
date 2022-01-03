@@ -62,5 +62,13 @@
         "pathRewrite": {
             "^/worst-district": ""
         }
+    },
+    "/info": {
+        "target": "http://localhost:8080/info",
+        "secure": false,
+        "logLevel": "debug",
+        "pathRewrite": {
+            "^/info": ""
+        }
     }
 }

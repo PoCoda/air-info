@@ -1,5 +1,5 @@
 {
-    "CURRENT_POLLUTION": "Aktualne zanieczyszczenie w Krakowie",
+    "CURRENT_POLLUTION": "Aktualne zanieczyszczenie",
     "MATCHES": "Zanieczyszczenie spełnia normy",
     "DOESNT_MATCH": "Zanieczyszczenie przekracza normy",
     "EXCEEDS": "Zanieczyszczenie przekracza normy",
@@ -18,9 +18,9 @@
     "THIS_WEEK_AVERAGE": "W tym tygodniu",
     "LAST_WEEK_AVERAGE": "W zeszłym tygodniu",
     "FOOTER": {
-        "CURRENT_STATUS_REPRESENTS": "Aktualne zaniczyszczenie jest średnią ważoną liczoną w promieniu 1.5KM wokół centrum Krakowa",
-        "PERCENTAGE_CALCULATED_BY": "Zanieczyszcznie procentowe liczone w stosunku do norm WHO",
-        "HARM_FACTOR": "Harm factor jest definiowany jako (2 * PM2.5 + PM10) / 3. Włącza on większą szkodliwość PM2.5",
-        "API_CRIDENTIALS": "Wygenerowano dzięki Airly API"
+        "CURRENT_STATUS_REPRESENTS": "",
+        "PERCENTAGE_CALCULATED_BY": "Zanieczyszcznie procentowe jest liczone w stosunku do norm WHO.",
+        "HARM_FACTOR": "Harm factor jest definiowany jako (2 * PM2.5 + PM10) / 3, co włącza większą szkodliwość PM2.5",
+        "API_CRIDENTIALS": "Wygenerowano dzięki Airly API oraz watherapi.com"
     }
 }

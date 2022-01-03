@@ -18,7 +18,7 @@ export class CurrentStatusComponent implements OnInit {
   ngOnInit() {
     this.status = this.apiService.getCurrentStatus();
     this.status.subscribe(result => {
-      this.harmFactor = (2 * result.pm25.percentage + result.pm10.percentage) / 3;
+      this.harmFactor = (2 * result.pollution.pm25.percentage + result.pollution.pm10.percentage) / 3;
     })
   }
 }
